@@ -90,6 +90,9 @@
     border-radius: 8px;
 }
 
+room {
+}
+
  #rent {
   width: 350px;
   background-color: white;
@@ -142,7 +145,7 @@ button:disabled {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
