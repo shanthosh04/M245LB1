@@ -1,16 +1,13 @@
-/* Allgemeine Zurücksetzung von Padding, Margin und Box-Sizing für alle Elemente */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
   
-  /* Anpassungen für mobile Geräte */
   html {
     height: -webkit-fill-available;
   }
   
-  /* Schriftart und Hintergrundanpassungen für den Body */
   body {
     font-family: Arial;
     color: #111111;
@@ -26,7 +23,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #C0C0C0; /* Blaue Hintergrundfarbe */
+    background-color: #C0C0C0;
   }
   
   .navigation li {
@@ -45,13 +42,11 @@
     text-decoration: none;
   }
   
-  /* Stil für Links und besuchte Links */
   a:link,
   a:visited {
     color: #fff;
   }
   
-  /* Stil für Überschrift h1 */
   h1 {
     display: flex;
     justify-content: center;
@@ -60,7 +55,6 @@
     font-size: 32px;
   }
   
-  /* Stil für Überschrift h2 */
   h2 {
     text-align: left;
     margin-top: 3%;
@@ -68,17 +62,14 @@
     font-size: 24px;
   }
   
-  /* Stil für Überschrift h3 */
   h3 {
     font-size: 18px;
   }
   
-  /* Stil für Absätze */
   p {
     font-size: 16px;
   }
   
-  /* Stil für das Logo */
   .logo {
     width: 12%;
     height: 12%;
@@ -130,24 +121,6 @@ button:disabled {
     background-color: #cccccc;
 }
   
-  /* Stil für den Footer */
-  footer {
-    display: block;
-    height: 150px;
-    width: 100%;
-    margin: 0;
-    background-color: #6495ed;
-    color: #fff;
-    padding: 20px 0; /* Hinzugefügt, um den Inhalt innerhalb des Footers zu zentrieren */
-    margin-top: auto;
-  }
-  
-  /* Stil für Tabellen im Footer */
-  footer table {
-    width: 100%;
-    padding-left: 25%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
 
   
