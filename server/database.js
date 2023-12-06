@@ -1,4 +1,4 @@
-let pool = null;
+ let pool = null;
 
 const dbInit = async () => {
   const mariadb = require("mariadb");

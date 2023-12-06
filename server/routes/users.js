@@ -6,7 +6,7 @@ users.get("/", (req, res) => {
   res.json("Users works!");
 });
 
-users.post("/login", async (req, res) => {
+users.post("/register", async (req, res) => {
   const {
     firstname,
     lastname,
@@ -37,8 +37,13 @@ users.post("/login", async (req, res) => {
   res.json("OK");
 });
 
-users.post("/register", (req, res) => {
-  res.json("Users works!");
+users.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const users = await executeSQL(`SELECT * FROM users WHERE email='${email}';`);
+  const data = users[0];
+  if (!data) return console.error("User doesn't exist");
+  const token = jwt.sign({ data });
+  res.json(token);
 });
 
 module.exports = users;
