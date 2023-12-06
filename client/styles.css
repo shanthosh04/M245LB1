@@ -26,7 +26,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #6495ed; /* Blaue Hintergrundfarbe */
+    background-color: #C0C0C0; /* Blaue Hintergrundfarbe */
   }
   
   .navigation li {
@@ -80,8 +80,8 @@
   
   /* Stil für das Logo */
   .logo {
-    width: 9%;
-    height: 9%;
+    width: 12%;
+    height: 12%;
     margin-left: auto;
     margin-right: auto;
     background-position: center;
