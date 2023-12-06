@@ -65,7 +65,7 @@
   h3 {
     font-size: 18px;
   }
-  
+
   p {
     font-size: 16px;
   }
@@ -90,7 +90,7 @@
     border-radius: 8px;
 }
 
- #rent-garage {
+ #rent {
   width: 350px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -98,6 +98,17 @@
   padding: 20px;
   border-radius: 8px;
 }
+.rentbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rentbox img {
+  max-width: 50%;
+  height: auto;
+}
+
 
 #messages {
     height: 300px;
