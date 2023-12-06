@@ -41,7 +41,6 @@ users.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const users = await executeSQL(`SELECT * FROM users WHERE email='${email}';`);
   const data = users[0];
-
   if (!data) return res.json({ error: "User doesn't exist" });
   if (data.password !== password) return res.json({ error: "Login failed" });
   const token = jwt.sign({ data });
