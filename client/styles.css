@@ -21,7 +21,6 @@
     height: -webkit-fill-available;
   }
   
-  /* Stil für die Navigationsleiste oben */
   .navigation ul {
     list-style-type: none;
     margin: 0;
@@ -30,7 +29,6 @@
     background-color: #6495ed; /* Blaue Hintergrundfarbe */
   }
   
-  /* Stil für die einzelnen Elemente der Navigation */
   .navigation li {
     float: right;
   }
