@@ -90,7 +90,9 @@
     border-radius: 8px;
 }
 
-room {
+#room {
+  margin-right: 10px; /* Äußerer Abstand */
+  padding-right: 10px; /* Innerer Abstand */
 }
 
  #rent {
