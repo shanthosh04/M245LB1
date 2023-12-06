@@ -1,0 +1,235 @@
+/* Allgemeine Zurücksetzung von Padding, Margin und Box-Sizing für alle Elemente */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Anpassungen für mobile Geräte */
+  html {
+    height: -webkit-fill-available;
+  }
+  
+  /* Schriftart und Hintergrundanpassungen für den Body */
+  body {
+    font-family: Arial;
+    color: #111111;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: -webkit-fill-available;
+  }
+  
+  /* Stil für die Navigationsleiste oben */
+  .navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6495ed; /* Blaue Hintergrundfarbe */
+  }
+  
+  /* Stil für die einzelnen Elemente der Navigation */
+  .navigation li {
+    float: right;
+  }
+  
+  .navigation li a {
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Stil für Links und besuchte Links */
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+  
+  /* Stil für Überschrift h1 */
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto;
+    font-size: 32px;
+  }
+  
+  /* Stil für Überschrift h2 */
+  h2 {
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  /* Stil für Überschrift h3 */
+  h3 {
+    font-size: 18px;
+  }
+  
+  /* Stil für Absätze */
+  p {
+    font-size: 16px;
+  }
+  
+  /* Stil für das Logo */
+  .logo {
+    width: 9%;
+    height: 9%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    top: 50px;
+    margin: 0.5em;
+  }
+  
+  /* Stil für Bilder auf der Startseite */
+  .startseitebilder {
+    width: 40%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    top: 50px;
+  }
+  
+  /* Textausrichtung im Abschnitt texthome */
+  .texthome {
+    text-align: center;
+  }
+  
+  /* Stil für Container */
+  div.container {
+    text-align: left;
+  }
+  
+  /* Stil für die UL-Liste mit der Klasse myUL */
+  ul.myUL {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  /* Stil für die Karte */
+  .karte {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+  
+  /* Stil für Container von Zimmern */
+  .zimmer-container {
+    display: inline-block;
+    align-items: center;
+  }
+  
+  /* Stil für Zimmerbilder */
+  .zimmer-image {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 70%;
+    width: 40%;
+  }
+  
+  /* Stil für Aktivitätsbilder */
+  .activity img {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+    height: 70%;
+    width: 40%;
+    background-position: center;
+  }
+  
+  /* Stil für Aktivitätsdetails */
+  .activity-details {
+    flex-grow: 1;
+  }
+  
+  /* Stil für Listen in Aktivitäten */
+  .activity ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .activity ul li {
+    margin-bottom: 5px;
+  }
+  
+  .activity ul p {
+    margin-top: 0;
+  }
+  
+  /* Stil für Formulare */
+  form {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+  }
+  
+  /* Stil für den Footer */
+  footer {
+    display: block;
+    height: 150px;
+    width: 100%;
+    margin: 0;
+    background-color: #6495ed;
+    color: #fff;
+    padding: 20px 0; /* Hinzugefügt, um den Inhalt innerhalb des Footers zu zentrieren */
+    margin-top: auto;
+  }
+  
+  /* Stil für Tabellen im Footer */
+  footer table {
+    width: 100%;
+    padding-left: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Stil für allgemeine Tabellen */
+  table {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Stil für Bilder in der Menüliste */
+  .menue img {
+    display: block;
+    width: 300px;
+  }
+  
+  /* Stil für Impressumsdaten und Center-Div */
+  .impressumDaten,
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Stil für das Aktivitätscontainer */
+  .activity {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
