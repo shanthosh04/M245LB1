@@ -90,6 +90,10 @@
     border-radius: 8px;
 }
 
+#textpicture-container {
+  display: inline-block;
+}
+
  #rent {
   width: 350px;
   background-color: white;
@@ -180,8 +184,3 @@ footer {
   text-align: center;
   padding: 10px 0;
 }
-
-
-
-
-  
