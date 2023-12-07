@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const ip = process.env.IP || "localhost";
 const url = `http://${ip}:${port}/`;
 
-const { dbInit } = require("./database");
+const { dbInit } = require("./db/database");
 
 app.use(express.json());
 
