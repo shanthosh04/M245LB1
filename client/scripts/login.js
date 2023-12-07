@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
-  const loginButton = document.getElementById("login");
-  const errorText = document.getElementById("error");
-  const send = document.getElementById("send");
-
-  if (!usernameInput || !passwordInput || !loginButton || !errorText || !send) {
-    console.error("One or more elements not found. Check HTML structure and IDs.");
-    return;
-  }
+  const byId = (id) => document.getElementById(id);
+  const emailInput = byId("email");
+  const passwordInput = byId("password");
+  const loginButton = byId("login");
+  const errorText = byId("error");
+  const send = byId("send");
 
   loginButton.addEventListener("click", async () => {
-    const username = usernameInput.value;
+    const email = emailInput.value;
     const password = passwordInput.value;
 
     if (password.length < 6) {
@@ -22,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("localhost:6000/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();

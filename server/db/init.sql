@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS users (
     street VARCHAR(255) NOT NULL,
     streetnr int NOT NULL,
     zip VARCHAR(255) NOT NULL,
-    birthday int NOT NULL,
+    birthday DATE NOT NULL,
     phone VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
