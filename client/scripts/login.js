@@ -1,25 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");
-  const send = document.getElementById("login");
+  const loginButton = document.getElementById("login");
   const errorText = document.getElementById("error");
+  const send = document.getElementById("send");
 
-  send.addEventListener("click", async () => {
+  if (!usernameInput || !passwordInput || !loginButton || !errorText || !send) {
+    console.error("One or more elements not found. Check HTML structure and IDs.");
+    return;
+  }
+
+  loginButton.addEventListener("click", async () => {
     const username = usernameInput.value;
     const password = passwordInput.value;
-    const response = await fetch("/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    const data = await response.json();
-    if (data?.token) {
-      localStorage.setItem("user", JSON.stringify(data));
-      window.location.href = "/";
+
+    if (password.length < 6) {
+      send.innerHTML = "Password must be at least 6 characters.";
+      return;
     } else {
-      errorText.innerText = data.error || "Login fehlgeschlagen";
+      send.innerHTML = "";
+    }
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (data?.token) {
+        localStorage.setItem("token", data.token);
+
+        window.location.href = "/";
+      } else {
+        errorText.innerText = data.error || "An error occurred.";
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+      errorText.innerText = "An error occurred. Please try again.";
     }
   });
 });
