@@ -1,6 +1,6 @@
 const users = require("express").Router();
 const jwt = require("../jwt");
-const { executeSQL } = require("../database");
+const { executeSQL } = require("../db/database");
 
 users.get("/", (req, res) => {
   res.json("Users works!");
