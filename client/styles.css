@@ -108,8 +108,29 @@
     background-color: #fafafa;
 }
 
-room{
-  justify-content: center;
+.image-container {
+  display: flex; /* Aktiviert Flexbox */
+  justify-content: space-around; /* Verteilt die Elemente gleichmäßig */
+  flex-wrap: wrap; /* Erlaubt das Umbruch der Elemente auf neue Zeilen */
+}
+
+#rent {
+  flex-basis: 20%; /* Gibt die Basisbreite für jedes Bild an */
+  text-align: center; /* Zentriert den Text unter dem Bild */
+  margin: 10px; /* Fügt einen Rand um jedes Bild herum hinzu */
+}
+
+.room {
+  width: 100%; 
+  height: auto; 
+}
+
+
+.room {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 input {
