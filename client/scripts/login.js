@@ -2,23 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const byId = (id) => document.getElementById(id);
   const emailInput = byId("email");
   const passwordInput = byId("password");
-  const loginButton = byId("login");
+  const loginButton = byId("send");
   const errorText = byId("error");
-  const send = byId("send");
 
   loginButton.addEventListener("click", async () => {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    if (password.length < 6) {
-      send.innerHTML = "Password must be at least 6 characters.";
-      return;
-    } else {
-      send.innerHTML = "";
-    }
-
     try {
-      const response = await fetch("localhost:6000/api/login", {
+      const response = await fetch("http://localhost:3000/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (data?.token) {
-        localStorage.setItem("token", data.token);
+        sessionStorage.setItem("token", data.token);
 
-        window.location.href = "/";
+        window.location.href = "rentroom.html";
       } else {
         errorText.innerText = data.error || "An error occurred.";
       }

@@ -2,13 +2,16 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 6000;
+const cors = require("cors");
+
+const port = process.env.PORT || 3000;
 const ip = process.env.IP || "localhost";
 const url = `http://${ip}:${port}/`;
 
 const { dbInit } = require("./db/database");
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => res.json("Server works!"));
 

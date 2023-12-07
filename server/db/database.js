@@ -18,19 +18,10 @@ const dbInit = async () => {
     if (err) return console.error(err);
     const queries = data.split(";");
     queries.pop();
-    queries.forEach((query) => executeSQL(query));
+    queries.forEach(async (query) => await executeSQL(query));
   });
 };
 
-const executeSQL = (query) => {
-  let output = "";
-  conn
-    .raw(query)
-    .then((response) => {
-      output = response;
-    })
-    .catch((err) => console.error(err));
-  return output;
-};
+const executeSQL = async (query) => await conn.raw(query);
 
 module.exports = { executeSQL, dbInit };
