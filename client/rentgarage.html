@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="scripts/rentgarage.js"></script>
     <title>Modul 245</title>
   </head>
 
@@ -21,48 +22,49 @@
           <li><a href="rentroom.html">Raum mieten</a></li>
         </ul>
       </div>
-
+    </nav>
     <h1>Garage Mieten</h1>
 
-
     <div class="image-container">
-    <img class="rent" src="picture/garage.png" alt=" room" />
+      <img class="rent" src="picture/garage.png" alt=" room" />
 
-    <br>
-    <br>
+      <br />
+      <br />
 
-    <div class="textpicture-container">
-
-      <div id="chat-container">
-
+      <div class="textpicture-container">
+        <div id="chat-container">
           Wählen Sie die Garage Nummer:
-          <input type="number" id="datetoInput" placeholder="Please enter your garage number">    
+          <input
+            type="number"
+            id="parkingnr"
+            placeholder="Please enter your garage number"
+          />
 
           <p>Datum von</p>
-          <input type="date" id="datefromInput">
-      
+          <input type="date" id="datefromInput" />
+
           <p>Datum bis</p>
-          <input type="date" id="datetoInput">
-          
+          <input type="date" id="datetoInput" />
+
           <button id="send">Senden</button>
+        </div>
       </div>
     </div>
-  </div>
 
-      <br>
-      <br>
+    <br />
+    <br />
 
     <footer>
-        <table>
-          <tr>
-            <td>
-              <p>CsBe</p>
-              <p>Zieglerstrasse 64</p>
-              <p>3000, 14 Bern</p>
-              <p>csbe@gmail.com</p>
-            </td>
-          </tr>
-        </table>
-    </footer> 
+      <table>
+        <tr>
+          <td>
+            <p>CsBe</p>
+            <p>Zieglerstrasse 64</p>
+            <p>3000, 14 Bern</p>
+            <p>csbe@gmail.com</p>
+          </td>
+        </tr>
+      </table>
+    </footer>
   </body>
 </html>

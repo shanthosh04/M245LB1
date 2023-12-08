@@ -23,7 +23,7 @@ users.post("/register", async (req, res) => {
     `SELECT * FROM users WHERE email='${email}'`
   );
 
-  if (existing[0].length > 0) return res.json({ err: "User already exists!" });
+  if (existing.length > 0) return res.json({ err: "User already exists!" });
 
   const insert = await executeSQL(`INSERT INTO users
   (email, firstname, lastname, street, zip, birthday, phone, password, streetnr) VALUES
@@ -31,7 +31,9 @@ users.post("/register", async (req, res) => {
     "','"
   )}',${streetnr});`);
 
-  const id = insert[0].insertId;
+  const users = await executeSQL(`SELECT * FROM users WHERE email='${email}'`);
+
+  const id = users[0].id;
 
   await executeSQL(`INSERT INTO roles (user, name) VALUES (${id}, 'Dozent')`);
 
@@ -43,7 +45,7 @@ users.post("/login", async (req, res) => {
 
   const users = await executeSQL(`SELECT * FROM users WHERE email='${email}';`);
 
-  const data = { ...users[0][0] };
+  const data = { ...users[0] };
 
   if (!data) return res.json({ err: "User doesn't exist!" });
 

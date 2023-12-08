@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="scripts/rentroom.js"></script>
     <title>Modul 245</title>
   </head>
 
@@ -21,118 +22,127 @@
           <li><a href="rentroom.html">Raum mieten</a></li>
         </ul>
       </div>
-
+    </nav>
     <h1>Raum Mieten</h1>
 
     <img class="roomplan" src="picture/room.png" alt=" room" />
 
     <div class="image-container">
+      <div id="rent">
+        <h3>Blueemlisalp</h3>
+        <img class="room" src="picture\Blueemlisalp.jpg" alt=" Blueemlisalp" />
+        <br />
+        <p>2.OG</p>
+        <p>Seminarraum</p>
+        <p>max. 20 Plätze</p>
+      </div>
 
-    <div id="rent">
-      <h3> Blueemlisalp </h3>
-      <img class="room" src="picture\Blueemlisalp.jpg" alt=" Blueemlisalp" />
-      <br>
-      <p>2.OG</p>
-      <p>Seminarraum</p>
-      <p>max. 20 Plätze</p>
+      <div id="rent">
+        <h3>Boston</h3>
+        <img class="room" src="picture\Boston.jpeg" alt=" Boston" />
+        <br />
+        <p>1.OG</p>
+        <p>Informatikraum</p>
+        <p>max. 17 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Cambridge</h3>
+        <img class="room" src="picture\Cambridge.jpeg" alt=" Cambridge" />
+        <br />
+        <p>1.OG</p>
+        <p>Informatikraum</p>
+        <p>max. 17 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Eiger</h3>
+        <img class="room" src="picture\Eiger.jpeg" alt=" Eiger" />
+        <br />
+        <p>2.OG</p>
+        <p>Informatikraum</p>
+        <p>max. 20 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Havard</h3>
+        <img class="room" src="picture\Harvard.jpeg" alt=" havard" />
+        <br />
+        <p>1.OG</p>
+        <p>Informatikraum</p>
+        <p>max. 23 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Rubin</h3>
+        <img class="room" src="picture\Rubin.jpeg" alt=" Rubin" />
+        <br />
+        <p>EG</p>
+        <p>Informatikraum</p>
+        <p>max. 30 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Smaragd</h3>
+        <img class="room" src="picture\Smaragd.jpeg" alt=" Smaragd" />
+        <br />
+        <p>EG</p>
+        <p>Seminarraum</p>
+        <p>max. 30 Plätze</p>
+      </div>
+
+      <div id="rent">
+        <h3>Sorbonne</h3>
+        <img class="room" src="picture\Sorbonne.jpeg" alt=" Sorbonne" />
+        <br />
+        <p>1.OG</p>
+        <p>Informatikraum</p>
+        <p>max. 15 Plätze</p>
+      </div>
     </div>
 
-    <div id="rent">
-      <h3> Boston </h3>
-      <img class="room" src="picture\Boston.jpeg" alt=" Boston" />
-      <br>
-      <p>1.OG</p>
-      <p>Informatikraum</p>
-      <p>max. 17 Plätze</p>
+    <br />
+    <br />
+
+    <div id="chat-container">
+      Raum namen eingeben:
+      <input
+        type="text"
+        id="roomNameInput"
+        placeholder="Please enter your name"
+      />
+
+      <p>Datum von</p>
+      <input
+        type="date"
+        id="datefromInput"
+        placeholder="Please enter your date"
+      />
+
+      <p>Datum bis</p>
+      <input
+        type="date"
+        id="datetoInput"
+        placeholder="Please enter your date"
+      />
+
+      <button id="send">Senden</button>
     </div>
 
-    <div id="rent">
-      <h3> Cambridge </h3>
-      <img class="room" src="picture\Cambridge.jpeg" alt=" Cambridge" />
-      <br>
-      <p>1.OG</p>
-      <p>Informatikraum</p>
-      <p>max. 17 Plätze</p>
-    </div>
-
-    <div id="rent">
-      <h3> Eiger </h3>
-      <img class="room" src="picture\Eiger.jpeg" alt=" Eiger" />
-      <br>
-      <p>2.OG</p>
-      <p>Informatikraum</p>
-      <p>max. 20 Plätze</p>
-    </div>
-
-    <div id="rent">
-      <h3> Havard </h3>
-      <img class="room" src="picture\Harvard.jpeg" alt=" havard" />
-      <br>
-      <p>1.OG</p>
-      <p>Informatikraum</p>
-      <p>max. 23 Plätze</p>
-    </div>
-
-    <div id="rent">
-      <h3> Rubin </h3>
-      <img class="room" src="picture\Rubin.jpeg" alt=" Rubin" />
-      <br>
-      <p>EG</p>
-      <p>Informatikraum</p>
-      <p>max. 30 Plätze</p>
-    </div>
-
-    <div id="rent">
-      <h3> Smaragd </h3>
-      <img class="room" src="picture\Smaragd.jpeg" alt=" Smaragd" />
-      <br>
-      <p>EG</p>
-      <p>Seminarraum</p>
-      <p>max. 30 Plätze</p>
-    </div>
-
-    <div id="rent">
-      <h3> Sorbonne </h3>
-      <img class="room" src="picture\Sorbonne.jpeg" alt=" Sorbonne" />
-      <br>
-      <p>1.OG</p>
-      <p>Informatikraum</p>
-      <p>max. 15 Plätze</p>
-    </div>
-  </div>
-
-  <br>
-  <br>
-
-  <div id="chat-container">
-
-    Raum namen eingeben:
-    <input type="text" id="datetoInput" placeholder="Please enter your name">  
-
-    <p>Datum von</p>
-    <input type="date" id="datefromInput" placeholder="Please enter your date">
-
-    <p>Datum bis</p>
-    <input type="date" id="datetoInput" placeholder="Please enter your date">
-
-    <button id="send">Senden</button>
-  
-  </div>
-
-  <br>
-  <br>
+    <br />
+    <br />
 
     <footer>
-        <table>
-          <tr>
-            <td>
-              <p>CsBe</p>
-              <p>Zieglerstrasse 64</p>
-              <p>3000, 14 Bern</p>
-              <p>csbe@gmail.com</p>
-            </td>
-          </tr>
-        </table>
-    </footer> 
+      <table>
+        <tr>
+          <td>
+            <p>CsBe</p>
+            <p>Zieglerstrasse 64</p>
+            <p>3000, 14 Bern</p>
+            <p>csbe@gmail.com</p>
+          </td>
+        </tr>
+      </table>
+    </footer>
   </body>
 </html>
