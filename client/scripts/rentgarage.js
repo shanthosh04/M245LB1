@@ -5,15 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const dateFromInput = byId("datefromInput");
   const dateToInput = byId("datetoInput");
   const sendButton = byId("send");
-  //const messageDisplay = byId("message");
 
   sendButton.addEventListener("click", async () => {
     const garageNumber = +parkingnr.value;
     const dateFrom = dateFromInput.value;
     const dateTo = dateToInput.value;
-
-    // if (!garageNumber || !dateFrom || !dateTo)
-    //   return (messageDisplay.innerText = "Please fill in all fields.");
 
     const token = sessionStorage.getItem("token");
     if (!token)
