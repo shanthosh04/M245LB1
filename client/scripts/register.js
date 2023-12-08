@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       password: byId("passwordInput").value,
     };
     console.log(data);
-    const res = await fetch("http://localhost:3000/users/register", {
+    const res = await fetch(BACKEND_URL + "/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

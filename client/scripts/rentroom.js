@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reservationData = { token, roomName, dateFrom, dateTo };
 
     try {
-      const response = await fetch("http://localhost:3000/rooms/reserve", {
+      const response = await fetch(BACKEND_URL + "/rooms/reserve", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

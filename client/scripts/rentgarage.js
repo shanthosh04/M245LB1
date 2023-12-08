@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/parkings/reserve", {
+      const response = await fetch(BACKEND_URL + "/parkings/reserve", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
