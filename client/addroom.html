@@ -24,9 +24,40 @@
         </ul>
       </div>
     </nav>
-
     
+    <h1> Räume erstellen </h1>
 
+    <div id="chat-container">
+    <input type="text"  id="addroomInput" placeholder="Gib den Namen für den Raum an">
+
+    <br>
+
+    <input type="file" id="bildHochladen" accept="image/*">
+
+    <br>
+    <br>
+
+    <select id="floorselection">
+        <option value="EG">Erdgeschoss</option>
+        <option value="1OG">1. Obergeschoss</option>
+        <option value="2OG">2. Obergeschoss</option>
+    </select>
+
+    <br>
+    <br>
+
+    <select id="roomselection">
+        <option value="EG">Informatikraum</option>
+        <option value="1OG">Seminarraum</option>
+    </select>
+
+    <br>
+    <br>
+
+    <input type="text"  id="addroomInput" placeholder="Bitte gib die Plätze an die zu Verfügung steht">
+
+    <button id="send">Send</button>
+    </div>
 
     <div id="fixed">
       <footer>
