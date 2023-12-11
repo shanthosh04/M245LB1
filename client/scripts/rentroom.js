@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const roomName = roomNameInput.value;
     const dateFrom = dateFromInput.value;
     const dateTo = dateToInput.value;
+    const timeFrom = timeFromInput.value;
+    const timeTo = timeToInput.value;
 
-    if (!roomName || !dateFrom || !dateTo) {
+    if (!roomName || !dateFrom || !dateTo || !timeFrom || !timeTo) {
       messageDisplay.innerText = "Please fill in all fields.";
       return;
     }
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!token)
       return (messageDisplay.innerText = "Authentication token is missing.");
 
-    const reservationData = { token, roomName, dateFrom, dateTo };
+    const reservationData = { token, roomName, dateFrom, dateTo, timeFrom, timeTo };
 
     try {
       const response = await fetch(BACKEND_URL + "/rooms/reserve", {

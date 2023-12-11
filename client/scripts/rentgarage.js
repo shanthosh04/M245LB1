@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const garageNumber = +parkingnr.value;
     const dateFrom = dateFromInput.value;
     const dateTo = dateToInput.value;
+    const timeFrom = timeFromInput.value;
+    const timeTo = timeToInput.value;
 
     const token = sessionStorage.getItem("token");
     if (!token)
@@ -20,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       parkingnr: garageNumber,
       dateFrom,
       dateTo,
+      timeFrom,
+      timeTo
     };
 
     try {
