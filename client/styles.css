@@ -103,6 +103,19 @@
   border-radius: 8px;
 }
 
+#textcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#textcenter p {
+  margin: 0; 
+  font-weight: bold;
+}
+
+
 #messages {
     height: 300px;
     border: 1px solid #ddd;
