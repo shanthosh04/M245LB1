@@ -10,12 +10,7 @@ const dbInit = async () => {
     database: process.env.DB_NAME || "mydb",
   });
 
-  fs.readFile("./server/db/init.sql", "utf-8", (err, data) => {
-    if (err) return console.error(err);
-    const queries = data.split(";");
-    queries.pop();
-    queries.forEach(async (query) => await executeSQL(query));
-  });
+  await runSQLfile("./server/db/init.sql");
 };
 
 const executeSQL = async (query) => {
@@ -31,4 +26,13 @@ const executeSQL = async (query) => {
   }
 };
 
-module.exports = { executeSQL, dbInit };
+const runSQLfile = async (filename) => {
+  fs.readFile(filename, "utf-8", (err, data) => {
+    if (err) return console.error(err);
+    const queries = data.split(";");
+    queries.pop();
+    queries.forEach(async (query) => await executeSQL(query));
+  });
+};
+
+module.exports = { executeSQL, dbInit, runSQLfile };
