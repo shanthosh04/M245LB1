@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const roomNameInput = byId("roomNameInput");
   const dateFromInput = byId("datefromInput");
   const dateToInput = byId("datetoInput");
+  const timeFromInput = byId("timeFromInput");
+  const timeToInput = byId("timeToInput");
   const sendButton = byId("send");
   const messageDisplay = byId("message");
 
   document.getElementById('add').addEventListener('click', function() {
     window.location.href = "addroom.html";
-});
-
+  });
 
   sendButton.addEventListener("click", async () => {
     const roomName = roomNameInput.value;
@@ -25,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const token = sessionStorage.getItem("token");
-    if (!token)
-      return (messageDisplay.innerText = "Authentication token is missing.");
+    if (!token) {
+      messageDisplay.innerText = "Authentication token is missing.";
+      return;
+    }
 
     const reservationData = { token, roomName, dateFrom, dateTo, timeFrom, timeTo };
 
@@ -38,9 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         body: JSON.stringify(reservationData),
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        messageDisplay.innerText = data.message || "Reservation failed due to an error.";
+        return;
+      }
+
       alert("Reservation successful!");
     } catch (error) {
       console.error("An error occurred:", error);
+      messageDisplay.innerText = "An error occurred during the reservation process.";
     }
   });
 });
