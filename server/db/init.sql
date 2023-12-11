@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS roles (
 
 CREATE TABLE IF NOT EXISTS room_reservations (
     id INT NOT NULL AUTO_INCREMENT,
-    user INT,
-    room VARCHAR(255),
+    user INT NOT NULL,
+    room VARCHAR(255) NOT NULL,
     status VARCHAR(255) NOT NULL,
     reserved_from DATE NOT NULL,
     reserved_to DATE NOT NULL,
@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS room_reservations (
 
 CREATE TABLE IF NOT EXISTS parking_reservations (
     id INT NOT NULL AUTO_INCREMENT,
-    user INT,
-    parkingnr INT,
+    user INT NOT NULL,
+    parkingnr INT NOT NULL,
     status VARCHAR(255) NOT NULL,
     reserved_from DATE NOT NULL,
     reserved_to DATE NOT NULL,
