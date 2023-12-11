@@ -20,6 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
       messageDisplay.innerText = "The parking number must not be greater than 10.";
       return;
     }
+
+    const isTimeInvalid = (time) => {
+      const [hours, minutes] = time.split(':').map(Number);
+      return hours >= 18;
+    };
+
+    if (isTimeInvalid(timeFrom) || isTimeInvalid(timeTo)) {
+      messageDisplay.innerText = "Reservations cannot be made after 6:00 PM.";
+      return;
+    }
+
     const token = sessionStorage.getItem("token");
     if (!token) {
       messageDisplay.innerText = "Authentication token is missing.";

@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "addroom.html";
   });
 
+  const isTimeInvalid = (time) => {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours >= 18;
+  };
+
   sendButton.addEventListener("click", async () => {
     const roomName = roomNameInput.value;
     const dateFrom = dateFromInput.value;
@@ -22,6 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!roomName || !dateFrom || !dateTo || !timeFrom || !timeTo) {
       messageDisplay.innerText = "Please fill in all fields.";
+      return;
+    }
+
+    if (isTimeInvalid(timeFrom) || isTimeInvalid(timeTo)) {
+      messageDisplay.innerText = "Reservations cannot be made after 6:00 PM.";
       return;
     }
 
