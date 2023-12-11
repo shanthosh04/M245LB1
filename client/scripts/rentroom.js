@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendButton = byId("send");
   const messageDisplay = byId("message");
 
+  document.getElementById('add').addEventListener('click', function() {
+    window.location.href = "addroom.html";
+});
+
+
   sendButton.addEventListener("click", async () => {
     const roomName = roomNameInput.value;
     const dateFrom = dateFromInput.value;
