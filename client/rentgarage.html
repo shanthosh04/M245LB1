@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="scripts/global.js"></script>
     <script src="scripts/rentgarage.js"></script>
-    <link rel="icon" href="picture/logo.svg" type="image/icon type">
+    <link rel="icon" href="picture/logo.svg" type="image/icon type" />
     <title>Modul 245</title>
   </head>
 
@@ -31,8 +31,8 @@
       <p>WICHTIG: Ab 18 Uhr kann man die Garage nicht mehr mieten.</p>
     </div>
 
-    <br>
-    <br>
+    <br />
+    <br />
 
     <div class="image-container">
       <img class="rent" src="picture/garage.png" alt=" room" />
@@ -49,21 +49,14 @@
             placeholder="Please enter your garage number"
           />
 
-          <p>Datum von</p>
-          <input type="date" id="datefromInput" />
-
-          <p>Datum bis</p>
-          <input type="date" id="datetoInput" />
+          <p>Datum</p>
+          <input type="date" id="dateInput" />
 
           <p>Uhrzeit von</p>
-          <input type="time" 
-          name="uhrzeit"
-          id="TimeFromInput">
-  
-        <p>Uhrzeit bis</p>
-          <input type="time" 
-          name="uhrzeit"
-          id="TimeToInput">
+          <input type="time" name="uhrzeit" id="timeFromInput" />
+
+          <p>Uhrzeit bis</p>
+          <input type="time" name="uhrzeit" id="timeToInput" />
 
           <button id="send">Senden</button>
         </div>

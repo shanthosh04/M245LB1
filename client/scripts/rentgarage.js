@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const byId = (id) => document.getElementById(id);
 
   const parkingnr = byId("parkingnr");
-  const dateFromInput = byId("datefromInput");
-  const dateToInput = byId("datetoInput");
+  const dateFromInput = byId("dateInput");
   const timeFromInput = byId("timeFromInput");
   const timeToInput = byId("timeToInput");
   const sendButton = byId("send");
@@ -12,32 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
   sendButton.addEventListener("click", async () => {
     const garageNumber = +parkingnr.value;
     const dateFrom = dateFromInput.value;
-    const dateTo = dateToInput.value;
     const timeFrom = timeFromInput.value;
     const timeTo = timeToInput.value;
 
-    if (garageNumber > 10) {
-      messageDisplay.innerText = "The parking number must not be greater than 10.";
-      return;
-    }
-
-    const isTimeInvalid = (time) => {
-      const [hours, minutes] = time.split(':').map(Number);
-      return hours >= 18;
-    };
-
-    if (isTimeInvalid(timeFrom) || isTimeInvalid(timeTo)) {
-      messageDisplay.innerText = "Reservations cannot be made after 6:00 PM.";
-      return;
-    }
-
     const token = sessionStorage.getItem("token");
-    if (!token) {
-      messageDisplay.innerText = "Authentication token is missing.";
-      return;
-    }
 
-    const reservationData = { token, parkingnr: garageNumber, dateFrom, dateTo, timeFrom, timeTo };
+    const reservationData = {
+      token,
+      parkingnr: garageNumber,
+      dateFrom,
+      timeFrom,
+      timeTo,
+    };
 
     try {
       const response = await fetch(BACKEND_URL + "/parkings/reserve", {
@@ -50,15 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        messageDisplay.innerText = data.message || "Reservation failed due to an error.";
-        return;
-      }
-
       alert("Reservation successful!");
     } catch (error) {
       console.error("An error occurred:", error);
-      messageDisplay.innerText = "An error occurred during the reservation process.";
+      messageDisplay.innerText =
+        "An error occurred during the reservation process.";
     }
   });
 });

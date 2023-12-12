@@ -11,7 +11,7 @@ parkings.post("/", (req, res) => {
 });
 
 parkings.post("/reserve", async (req, res) => {
-  const { token, parkingnr, dateFrom, dateTo } = req.body;
+  const { token, parkingnr, dateFrom, timeFrom, timeTo } = req.body;
 
   const { decode, err } = verify(token);
   if (err) return res.json({ err });
@@ -19,8 +19,8 @@ parkings.post("/reserve", async (req, res) => {
   const { id } = decode.data;
 
   await executeSQL(`INSERT INTO parking_reservations
-  (user, parkingnr, reserved_from, reserved_to, status) VALUES
-  (${id}, ${parkingnr}, '${[dateFrom, dateTo, "available"].join("','")}');`);
+  (user, parkingnr, date, reserved_from, reserved_to) VALUES
+  (${id}, ${parkingnr}, '${[dateFrom, timeFrom, timeTo].join("','")}');`);
 
   res.json("OK");
 });

@@ -11,8 +11,17 @@ rooms.post("/", async (req, res) => {
   res.json("Rooms works!");
 });
 
+// rooms.post("/", async (req, res) => {
+
+//   await executeSQL(`INSERT INTO rooms
+//   () VALUES
+//   ()`)
+
+//   res.json("OK");
+// });
+
 rooms.post("/reserve", async (req, res) => {
-  const { token, roomName, dateFrom, dateTo } = req.body;
+  const { token, roomName, dateFrom, timeFrom, timeTo } = req.body;
 
   const { decode, err } = verify(token);
   if (err) return res.json({ err });
@@ -20,8 +29,8 @@ rooms.post("/reserve", async (req, res) => {
   const { id } = decode.data;
 
   await executeSQL(`INSERT INTO room_reservations
-  (user, room, reserved_from, reserved_to, status) VALUES
-  (${id}, '${[roomName, dateFrom, dateTo, "available"].join("','")}');`);
+  (user, room, date, reserved_from, reserved_to) VALUES
+  (${id}, '${[roomName, dateFrom, timeFrom, timeTo].join("','")}');`);
 
   res.json("OK");
 });

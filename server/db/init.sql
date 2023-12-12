@@ -16,7 +16,9 @@ CREATE TABLE IF NOT EXISTS rooms (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     img BLOB,
-    desk VARCHAR(255),
+    floor VARCHAR(255) NOT NULL,
+    room_type VARCHAR(255) NOT NULL,
+    spots VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -30,7 +32,7 @@ CREATE TABLE IF NOT EXISTS parkings (
 
 CREATE TABLE IF NOT EXISTS roles (
     id INT NOT NULL AUTO_INCREMENT,
-    user int,
+    user int NOT NULL,
     name VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user) REFERENCES users(id)
@@ -40,9 +42,9 @@ CREATE TABLE IF NOT EXISTS room_reservations (
     id INT NOT NULL AUTO_INCREMENT,
     user INT NOT NULL,
     room VARCHAR(255) NOT NULL,
-    status VARCHAR(255) NOT NULL,
-    reserved_from DATE NOT NULL,
-    reserved_to DATE NOT NULL,
+    date DATE NOT NULL,
+    reserved_from TIME NOT NULL,
+    reserved_to TIME NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user) REFERENCES users(id)
 );
@@ -51,9 +53,9 @@ CREATE TABLE IF NOT EXISTS parking_reservations (
     id INT NOT NULL AUTO_INCREMENT,
     user INT NOT NULL,
     parkingnr INT NOT NULL,
-    status VARCHAR(255) NOT NULL,
-    reserved_from DATE NOT NULL,
-    reserved_to DATE NOT NULL,
+    date DATE NOT NULL,
+    reserved_from TIME NOT NULL,
+    reserved_to TIME NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user) REFERENCES users(id)
 );
