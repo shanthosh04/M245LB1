@@ -20,7 +20,7 @@ parkings.post("/reserve", async (req, res) => {
     return res.json({ err: "No reservations past 18:00" });
 
   const { decode, err } = verify(token);
-  if (err) return res.json({ err });
+  if (err) return res.json({ err: "Token invalid" });
 
   const { id } = decode.data;
 
