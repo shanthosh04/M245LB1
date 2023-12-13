@@ -44,6 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
+      if (data.err) return (byId("err").innerHTML = data.err);
+
       alert("Reservation successful!");
     } catch (error) {
       console.error("An error occurred:", error);
