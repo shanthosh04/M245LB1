@@ -12,7 +12,11 @@ rooms.post("/", async (req, res) => {
 });
 
 rooms.post("/add", async (req, res) => {
-  const { name, img, floor, roomType, spots } = req.body;
+  const { token, name, img, floor, roomType, spots } = req.body;
+
+  const { decode, err } = verify(token);
+  if (err) return res.json({ err: "Token invalid" });
+
   await executeSQL(`INSERT INTO rooms
   (name, img, floor, room_type, spots) VALUES
   ('${[name, img, floor, roomType, spots].join("','")}')`);

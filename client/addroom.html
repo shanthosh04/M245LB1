@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="scripts/global.js"></script>
     <script src="scripts/login.js"></script>
-    <link rel="icon" href="picture/logo.svg" >
+    <link rel="icon" href="picture/logo.svg" />
     <title>Modul 245</title>
   </head>
 
@@ -25,51 +25,59 @@
         </ul>
       </div>
     </nav>
-    
-    <h1> Räume erstellen </h1>
 
-    <div id="chat-container">
-    
-    <p>Raumnamen eingeben</p>
-    <input type="text"  id="addroomInput" placeholder="Gib den Namen für den Raum an">
+    <h1>Räume erstellen</h1>
 
-    <br>
-    <br>
+    <div class="chat-container">
+      <p>Raumnamen eingeben</p>
+      <input
+        type="text"
+        id="addroomnameInput"
+        placeholder="Gib den Namen für den Raum an"
+      />
 
-    <p>Bild Hochladen</p>
-    <input type="file" id="bildHochladen" accept="image/*">
+      <br />
+      <br />
 
-    <br>
-    <br>
-    
-    <p>Stock wählen</p>
-    <select id="floorselection">
+      <p>Bild Hochladen</p>
+      <input type="file" id="pictureupload" accept="image/*" />
+
+      <br />
+      <br />
+
+      <p>Stock wählen</p>
+      <select id="floorselection">
         <option value="EG">Erdgeschoss</option>
         <option value="1OG">1. Obergeschoss</option>
         <option value="2OG">2. Obergeschoss</option>
-    </select>
+      </select>
 
-    <br>
-    <br>
+      <br />
+      <br />
 
-    <p>Raum wählen</p>
-    <select id="roomselection">
+      <p>Raum wählen</p>
+      <select id="roomselection">
         <option value="EG">Informatikraum</option>
         <option value="1OG">Seminarraum</option>
-    </select>
+      </select>
 
-    <br>
-    <br>
+      <br />
+      <br />
 
-    <p> Max Plätze</p>
-    <input type="text"  id="addroomInput" placeholder="Bitte gib die Plätze an die zu Verfügung steht">
+      <p>Max Plätze</p>
+      <input
+        type="text"
+        id="addroomInput"
+        placeholder="Bitte gib die Plätze an die zu Verfügung steht"
+      />
 
-    <button id="send">Send</button>
+      <button id="send">Send</button>
     </div>
 
-    <br>
-    <br>
+    <br />
+    <br />
 
+    <div>
       <footer>
         <table>
           <tr>

@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
       email: byId("emailInput").value,
       password: byId("passwordInput").value,
     };
-    console.log(data);
     const res = await fetch(BACKEND_URL + "/users/register", {
       method: "POST",
       headers: {
