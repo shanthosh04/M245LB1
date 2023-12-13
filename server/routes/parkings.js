@@ -16,10 +16,7 @@ parkings.post("/reserve", async (req, res) => {
   const hourFrom = +timeFrom.split(":")[0];
   const hourTo = +timeTo.split(":")[0];
 
-  if ( 11 < parkingnr)
-    return res.json({err: "no reservation from the 11th number"})
-
-  if (18 < hourFrom || 18 < hourTo)
+  if (18 > hourFrom || 18 > hourTo)
     return res.json({ err: "No reservations past 18:00" });
 
   const { decode, err } = verify(token);
