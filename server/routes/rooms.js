@@ -11,17 +11,23 @@ rooms.post("/", async (req, res) => {
   res.json("Rooms works!");
 });
 
-// rooms.post("/", async (req, res) => {
+rooms.post("/add", async (req, res) => {
+  const { name, img, floor, roomType, spots } = req.body;
+  await executeSQL(`INSERT INTO rooms
+  (name, img, floor, room_type, spots) VALUES
+  ('${[name, img, floor, roomType, spots].join("','")}')`);
 
-//   await executeSQL(`INSERT INTO rooms
-//   () VALUES
-//   ()`)
-
-//   res.json("OK");
-// });
+  res.json("OK");
+});
 
 rooms.post("/reserve", async (req, res) => {
   const { token, roomName, dateFrom, timeFrom, timeTo } = req.body;
+
+  const hourFrom = +timeFrom.split(":")[0];
+  const hourTo = +timeTo.split(":")[0];
+
+  if (18 < hourFrom || 18 < hourTo)
+    return res.json({ err: "No reservations past 18:00" });
 
   const { decode, err } = verify(token);
   if (err) return res.json({ err });
